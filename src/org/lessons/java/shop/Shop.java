@@ -12,5 +12,10 @@ public class Shop {
 	   
 	   System.out.println("Hai scelto questo prodotto "+ item.getNome() + " che ha questa descrizione: " + item.getDescrizione() + " costo: "+ item.getPrezzo());
 	   
+	   ;
+	   System.out.println(item.prezzoBase(item.getPrezzo()));
+	   
+	   item.prezzoTot(item.getPrezzo());
+	   
    }
 }
