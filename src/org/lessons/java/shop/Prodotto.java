@@ -1,5 +1,22 @@
 package org.lessons.java.shop;
 
+/*
+ Esercizio di oggi Java Shop repo : java-oop-shop
+Nel progetto java-oop-shop, package org.lessons.java.shop, X
+creare la classe Prodotto che gestisce i prodotti dello shop.X
+Un prodotto è caratterizzato da: - codice (numero intero) - nome - descrizione - prezzo - iva x
+Usate opportunamente i livelli di accesso (public, private), x
+i costruttori, x
+i metodi getter e setter x
+ed eventuali altri metodi di “utilità” per fare in modo che: 
+- alla creazione di un nuovo prodotto il codice sia valorizzato con un numero random - 
+il codice prodotto sia accessibile solo in lettura - x
+gli altri attributi siano accessibili sia in lettura che in scrittura - x
+il prodotto esponga un metodo per avere il prezzo base -
+il prodotto esponga un metodo per avere il prezzo comprensivo di iva - il prodotto esponga un metodo per avere il nome esteso, ottenuto concatenando codice-nome Nello stesso package aggiungete una classe Main con metodo main nella quale testate tutte le funzionalità della classe Prodotto.
+BONUS: create un metodo (statico) che restituisca il codice con un pad left di 0 per arrivare a 8 caratteri (ad esempio codice 91 diventa 00000091, mentre codice 123445567 resta come è)
+  */
+
 public class Prodotto {
 	
 	private int codiceProdotto;
@@ -55,7 +72,8 @@ public class Prodotto {
 		return iva;
 	}
 	
-
+    //METODO PER AVERE IL PREZZO BASE (PREZZO TOTALE - 22%)
+	
 	
 	
 	
