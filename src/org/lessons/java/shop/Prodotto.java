@@ -67,13 +67,17 @@ public class Prodotto {
 	}
 
     //GETTER CODICE PRODOTTO (SOLA LETTURA) -> METODO PER AVERE IL PREZZO BASE
-	public int getCodiceProdotto() {
+	public int getCodiceProdotto() {		
+		
 		int min = 1;
 		int max = 99999999;
 		int gap = (max - min)+ 1;
 		
 		int codice = (int) ((gap * Math.random()) + min);
-		return codice;
+		
+		codiceProdotto = codice;
+		
+		return codiceProdotto;
 	}
 
 	//GETTER IVA (SOLA LETTURA perché final e quindi non riassegnabile)
@@ -90,6 +94,15 @@ public class Prodotto {
 		float iva22 = a * 0.22f;
 		float b = a + iva22;
 		return b;
+		
+		
+	}
+	
+	//METODO PER OTTENERE IL NOME ESTESO DEL PRODOTTO --- CODICE + NOME
+	
+	public void nomeProdottoEsteso() {
+		
+		System.out.println("Il nome del prodotto è: " + this.codiceProdotto + this.nome);
 		
 		
 	}
