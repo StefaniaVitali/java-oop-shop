@@ -26,9 +26,12 @@ public class Main {
 		   item2.setDescrizione("profumo con note di ciliegia 55cc");
 		   item2.setPrezzo(47.5f);
 		   
-		   System.out.println("Hai scelto questo prodotto "+ item2.getNome() +  " e che ha questa descrizione: " + item2.getDescrizione() + " costo: "+ item2.getPrezzo());
+		   System.out.println("Hai scelto questo prodotto "+ item2.getNome() + " codice prodotto: " + item2.getCodiceProdotto()+ " e che ha questa descrizione: " + item2.getDescrizione() + " costo: "+ item2.getPrezzo());
 		  
 		   item2.nomeProdottoEsteso();
+		   item.codicePadLeft();
+		   item2.codicePadLeft();
+		   
 		   
 	   }
 	

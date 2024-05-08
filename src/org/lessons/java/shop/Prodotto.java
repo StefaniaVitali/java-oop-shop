@@ -14,7 +14,7 @@ il codice prodotto sia accessibile solo in lettura - x
 gli altri attributi siano accessibili sia in lettura che in scrittura - x
 il prodotto esponga un metodo per avere il prezzo base - x
 il prodotto esponga un metodo per avere il prezzo comprensivo di iva - X
-il prodotto esponga un metodo per avere il nome esteso, ottenuto concatenando codice-nome ------ QUA
+il prodotto esponga un metodo per avere il nome esteso, ottenuto concatenando codice-nome ------ X
 Nello stesso package aggiungete una classe Main x
 con metodo main nella quale testate tutte le funzionalità della classe Prodotto.
 BONUS: create un metodo (statico) che restituisca il codice con un pad left di 0 per arrivare a 8 caratteri (ad esempio codice 91 diventa 00000091, mentre codice 123445567 resta come è)
@@ -108,7 +108,15 @@ public class Prodotto {
 	}
 	
 	
-	//- alla creazione di un nuovo prodotto il codice sia valorizzato con un numero random -
+	//METODO STATIC CHE RESTITUISCA UN CODICE CON UN PAD LEFT DI 8 (BONUS)
+	
+	public void codicePadLeft () {
+	
+		String leftPadNumber = String.format("%08d", this.codiceProdotto);
+		
+		System.out.println(leftPadNumber);
+		
+	}
 
 	
 
