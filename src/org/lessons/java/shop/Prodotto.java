@@ -9,12 +9,14 @@ Usate opportunamente i livelli di accesso (public, private), x
 i costruttori, x
 i metodi getter e setter x
 ed eventuali altri metodi di “utilità” per fare in modo che: 
-- alla creazione di un nuovo prodotto il codice sia valorizzato con un numero random - 
+- alla creazione di un nuovo prodotto il codice sia valorizzato con un numero random - x
 il codice prodotto sia accessibile solo in lettura - x
 gli altri attributi siano accessibili sia in lettura che in scrittura - x
 il prodotto esponga un metodo per avere il prezzo base - x
 il prodotto esponga un metodo per avere il prezzo comprensivo di iva - X
-il prodotto esponga un metodo per avere il nome esteso, ottenuto concatenando codice-nome Nello stesso package aggiungete una classe Main con metodo main nella quale testate tutte le funzionalità della classe Prodotto.
+il prodotto esponga un metodo per avere il nome esteso, ottenuto concatenando codice-nome ------ QUA
+Nello stesso package aggiungete una classe Main x
+con metodo main nella quale testate tutte le funzionalità della classe Prodotto.
 BONUS: create un metodo (statico) che restituisca il codice con un pad left di 0 per arrivare a 8 caratteri (ad esempio codice 91 diventa 00000091, mentre codice 123445567 resta come è)
   */
 
@@ -29,6 +31,7 @@ public class Prodotto {
 	
 	//COSTRUTTORE 
 	public Prodotto () {
+		
 	}
 
     
@@ -63,9 +66,14 @@ public class Prodotto {
 		this.prezzo = prezzo;
 	}
 
-    //GETTER CODICE PRODOTTO (SOLA LETTURA)
+    //GETTER CODICE PRODOTTO (SOLA LETTURA) -> METODO PER AVERE IL PREZZO BASE
 	public int getCodiceProdotto() {
-		return codiceProdotto;
+		int min = 1;
+		int max = 99999999;
+		int gap = (max - min)+ 1;
+		
+		int codice = (int) ((gap * Math.random()) + min);
+		return codice;
 	}
 
 	//GETTER IVA (SOLA LETTURA perché final e quindi non riassegnabile)
@@ -73,43 +81,22 @@ public class Prodotto {
 		return iva;
 	}
 	
-
 	
+	//METODO PER AVERE IL PREZZO COMPRENSIVO DI IVA (PREZZO TOTALE + 22%)
+	
+	public float prezzoTot (float prezzo) {
 		
-//		float a = prezzo;
-//		float b = a * iva;
-//		
-//		return b;
-//		
-//	}
-	
-    //METODO PER AVERE IL PREZZO BASE (PREZZO TOTALE - 22%)
-	
-	public float prezzoBase (float prezzo) {
-	 
 		float a = prezzo;
-		float ivaValore = a * 0.22f;
-		float b = a - ivaValore;
-		
+		float iva22 = a * 0.22f;
+		float b = a + iva22;
 		return b;
 		
 		
 	}
 	
-	//METODO PER AVERE IL PREZZO COMPRENSIVO DI IVA (PREZZO TOTALE + 22%)
 	
-	public void prezzoTot (float prezzo) {
-		
-		float a = prezzo;
-		float iva22 = a * 0.22f;
-		float b = this.prezzoBase(this.prezzo);
-		
-		System.out.println("il prodotto da te scelto ha un costo totale di " + a + " e si compone di " + b + " con un'iva di euro " + iva22);
-	}
-	
-	
-	
-	
+	//- alla creazione di un nuovo prodotto il codice sia valorizzato con un numero random -
+
 	
 
 }
