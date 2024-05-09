@@ -26,7 +26,7 @@ public class Prodotto {
 	private String nome;
 	private String descrizione;
 	private float prezzo;
-	public final int iva = 22;
+	public final float IVA22 = 0.22f;
 	
 	
 	//COSTRUTTORE 
@@ -81,17 +81,17 @@ public class Prodotto {
 	}
 
 	//GETTER IVA (SOLA LETTURA perché final e quindi non riassegnabile)
-	public int getIva() {
-		return iva;
-	}
 	
+	public float getIVA22() {
+		return IVA22;
+	}
 	
 	//METODO PER AVERE IL PREZZO COMPRENSIVO DI IVA (PREZZO TOTALE + 22%)
 	
-	public float prezzoTot (float prezzo) {
+	public float prezzoTot (float prezzo, float iva) {
 		
 		float a = prezzo;
-		float iva22 = a * 0.22f;
+		float iva22 = a * iva;
 		float b = a + iva22;
 		return b;
 		
@@ -99,7 +99,8 @@ public class Prodotto {
 	}
 	
 	//METODO PER OTTENERE IL NOME ESTESO DEL PRODOTTO --- CODICE + NOME
-	
+
+
 	public void nomeProdottoEsteso() {
 		
 		System.out.println("Il nome del prodotto è: " + this.codiceProdotto + this.nome);
@@ -107,16 +108,18 @@ public class Prodotto {
 		
 	}
 	
+	//METODO STATIC CHE RESTITUISCA UN CODICE CON UN PAD LEFT DI 8 (BONUS) => deve essere statico		
 	
-	//METODO STATIC CHE RESTITUISCA UN CODICE CON UN PAD LEFT DI 8 (BONUS)
-	
-	public void codicePadLeft () {
-	
-		String leftPadNumber = String.format("%08d", this.codiceProdotto);
+//	public static String codiceLeftPad(int num) {
 		
-		System.out.println(leftPadNumber);
+//		String leftPadNumber = String.format("%08d", num);	
 		
-	}
+//		return leftPadNumber;
+		
+//	}
+	
+		
+		
 
 	
 

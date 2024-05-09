@@ -15,9 +15,9 @@ public class Main {
 		   System.out.println("Hai scelto questo prodotto "+ item.getNome() + " codice prodotto: " + item.getCodiceProdotto() + " che ha questa descrizione: " + item.getDescrizione() + " costo: "+ item.getPrezzo());
 		   
 		   ;
-		   System.out.println(item.prezzoTot(item.getPrezzo()));
+		   System.out.println(item.prezzoTot(item.getPrezzo(),item.getIVA22()));
 		   
-		   item.prezzoTot(item.getPrezzo());
+		   item.prezzoTot(item.getPrezzo(),item.getIVA22());
 		   
 		   
 		   Prodotto item2 = new Prodotto();
@@ -26,11 +26,21 @@ public class Main {
 		   item2.setDescrizione("profumo con note di ciliegia 55cc");
 		   item2.setPrezzo(47.5f);
 		   
+		   int codiceProdottoItem2 = item2.getCodiceProdotto();		   
+		   System.out.println(codiceProdottoItem2);
+		   
+		   
 		   System.out.println("Hai scelto questo prodotto "+ item2.getNome() + " codice prodotto: " + item2.getCodiceProdotto()+ " e che ha questa descrizione: " + item2.getDescrizione() + " costo: "+ item2.getPrezzo());
 		  
 		   item2.nomeProdottoEsteso();
-		   item.codicePadLeft();
-		   item2.codicePadLeft();
+           
+		   codiceProdottoItem2 = item2.getCodiceProdotto();		   
+		   System.out.println(codiceProdottoItem2);
+		   
+		   
+//		   System.out.println(Prodotto.codiceLeftPad(codiceProdottoItem2));
+		   
+		   
 		   
 		   
 	   }
